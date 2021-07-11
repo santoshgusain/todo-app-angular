@@ -1,0 +1,17 @@
+<div class="container my-4">
+    <h3>{{title}}</h3>
+    <app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+</div>
+<div class="container">
+    <h5>My Todos</h5>
+    <div *ngIf = "todos.length > 0 ; else elseBlock">
+        <ol class="list-group list-group-numbered" *ngFor="let todo of todos; index as i">
+            <app-todo-item 
+            (toggleComplete)='toggleComplete($event)' (todoDelete)='deleteTodo($event)' [todo]="todo" ></app-todo-item>
+        </ol>    
+    </div>
+    <ng-template #elseBlock>
+        <p>No Todo Added.</p>
+    </ng-template>
+    
+</div>
