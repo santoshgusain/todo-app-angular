@@ -44,4 +44,4 @@ testem.log
 .DS_Store
 Thumbs.db
 #files
-app.component copy.html
+app.component copy.htmls
